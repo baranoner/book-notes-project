@@ -35,11 +35,11 @@
 2. **Install Dependencies**
    ```bash
    npm install
-3. **Import the Database**
+3. **Import the Database**\
    Import the book_notes.sql file to your pgAdmin
-4. **.env Setup**
+5. **.env Setup**
 
-Create a file with .env extension
+   Create a file with .env extension
 ```
 DATABASE_PASSWORD=<Your database password>
 ``` 
