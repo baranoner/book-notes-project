@@ -1,0 +1,47 @@
+h1, h2, h3{
+    color: orange;
+    font-weight: bold;
+}
+
+body{
+    background-color: #664d2d;
+    font-family: "Valkyrie C4"; 
+}
+
+p{
+    color:bisque;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+label{
+    color: rgba(255, 166, 0, 0.815);
+}
+
+a{
+    color: #664d2d;
+}
+
+a:hover{
+    color: orange;
+}
+
+.bookimage{
+    height: 250px;
+}
+
+.orangeButton{
+    background-color: orange;
+    color: white;
+}
+
+.orangeButton:hover{
+    background-color:  rgba(255, 166, 0, 0.815);
+    color: white;
+}
+
+.eagle-lake-regular {
+  font-family: "Eagle Lake", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+

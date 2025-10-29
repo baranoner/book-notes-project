@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= book_info.name %></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://db.onlinewebfonts.com/c/5ef1d874f7e6c2b682f531ccf6479eeb?family=Valkyrie+C4" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <div class="d-flex flex-column align-items-center mt-3">
+        <div class="w-75">
+           <div class="d-flex justify-content-between align-items-center">
+                <%- include('partials/header.ejs') %>
+                <a role="button" class="orangeButton btn" href="/add">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"></path>
+                    </svg>
+                </a>
+            </div>
+            <div class="bookdiv">
+                <a href= "/books/<%= book_info.name %>">
+                    <img class="bookimage float-start me-3" src= "<%= book_info.image %>" alt="Book Cover">
+                    <h3 class="booktitle"><%= book_info.name %></h3>
+                </a>
+
+                <div class="d-flex gap-2">
+                    <form action="/edit" method="post">
+                        <input type= "hidden" name="id" value="<%= book_info.id %>">
+                        <button type="submit" class="btn orangeButton btn-sm">
+                             Edit
+                        </button>
+                     </form>
+    
+                    <form action="/delete" method="post">
+                        <input type= "hidden" name="id" value="<%= book_info.id %>">
+                            <button type="submit" onclick="return confirm('Do you really want to delete this book note?');" class="btn btn-danger btn-sm">
+                                Delete
+                            </button>
+                    </form>
+                </div>
+        
+                <p class="bookinfo">Date read: <%= book_info.date_read %> <br> Rating: <%= book_info.rating %>/10</p>
+        
+                <p class="bookreview"><%= book_info.review %></p>
+            </div>
+        </div>
+        <div class="w-75">
+            <h3 class="pt-5">Notes</h3>
+            <p><%= book_info.note %></p>
+        </div>
+    </div>
+</body>
+</html>

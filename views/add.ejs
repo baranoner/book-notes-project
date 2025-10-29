@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://db.onlinewebfonts.com/c/5ef1d874f7e6c2b682f531ccf6479eeb?family=Valkyrie+C4" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <div class="d-flex flex-column align-items-center mt-3">
+        <div class="w-50">
+            <%- include('partials/header.ejs') %>
+            
+            <form action="/post" method="post">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" name="name" id="name" required>
+                </div>
+
+                <div class=" w-25 mb-3">
+                    <label for="rating" class="form-label">Rating</label>
+                    <select class="form-select" name="rating" id="rating" required>
+                        <option value="" selected></option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+
+                <div class="w-25 mb-3">
+                    <label for="isbn" class="form-label">ISBN</label>
+                    <input type="text" class="form-control" name="isbn" id="isbn" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="review" class="form-label">Review</label>
+                    <textarea class="form-control" name="review" id="review" rows="3"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="notes" class="form-label">Notes</label>
+                    <textarea class="form-control" name="notes" id="notes" rows="10"></textarea>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="orangeButton btn">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
